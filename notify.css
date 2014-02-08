@@ -3,6 +3,7 @@
   top: 20px;
   right: 20px;
   font-family: "Arial", "Hiragino Sans GB", "WenQuanYi Micro Hei", sans-serif;
+  z-index: 999999;
 }
 .notify-container .notify-icon {
   float: left;
@@ -14,13 +15,17 @@
 .notify-container .notify-item {
   display: block;
   width: 300px;
-  background: -webkit-linear-gradient(white, #f9f9f9);
+  background: #f9f9f9 -webkit-linear-gradient(white, rgba(255,255,255,0.1));
+  background: #f9f9f9 -moz-linear-gradient(white, rgba(255,255,255,0.1));
+  background: #f9f9f9 -ms-linear-gradient(white, rgba(255,255,255,0.1));
+  background: #f9f9f9 -o-linear-gradient(white, rgba(255,255,255,0.1));
+  background: #f9f9f9 linear-gradient(white, rgba(255,255,255,0.1));
   margin-bottom: 12px;
   padding: 10px;
-  border: 1px solid #ddd;
-  border-color: #ddd #ccc #ccc #ddd;
+  border: 1px solid;
+  border-color: rgba(0,0,0,0.1) rgba(0,0,0,0.2) rgba(0,0,0,0.2) rgba(0,0,0,0.1);
   border-radius: 3px;
-  box-shadow: 1px 1px 6px #ccc;
+  box-shadow: 1px 1px 6px rgba(0,0,0,0.2);
   text-decoration: none;
   color: #333;
 }
