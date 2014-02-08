@@ -1,0 +1,38 @@
+.notify-container {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  font-family: "Arial", "Hiragino Sans GB", "WenQuanYi Micro Hei", sans-serif;
+}
+.notify-container .notify-icon {
+  float: left;
+  width: 36px;
+  height: 36px;
+  margin-right: 10px;
+  border-radius: 3px;
+}
+.notify-container .notify-item {
+  display: block;
+  width: 300px;
+  background: -webkit-linear-gradient(white, #f9f9f9);
+  margin-bottom: 12px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-color: #ddd #ccc #ccc #ddd;
+  border-radius: 3px;
+  box-shadow: 1px 1px 6px #ccc;
+  text-decoration: none;
+  color: #333;
+}
+.notify-container .notify-content {
+  overflow: hidden;
+}
+.notify-container .notify-title {
+  font-weight: 600;
+  line-height: 1.4;
+}
+.notify-container .notify-message {
+  font-size: 0.9em;
+  line-height: 1.2;
+  color: #555;
+}

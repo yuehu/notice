@@ -1,0 +1,19 @@
+{
+  "name": "notify",
+  "repo": "yuehu/notify",
+  "description": "A notification message component.",
+  "version": "0.0.1",
+  "keywords": [],
+  "dependencies": {
+    "component/query": "*"
+  },
+  "development": {},
+  "license": "MIT",
+  "main": "index.js",
+  "scripts": [
+    "index.js"
+  ],
+  "styles": [
+    "notify.css"
+  ]
+}
