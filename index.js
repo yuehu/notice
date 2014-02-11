@@ -12,11 +12,11 @@ function Notify(options) {
   // options contains: title, message, iconUrl, url
   var el = createElement(options);
   el.id = 'notify-' + parseInt(Math.random() * 1000000, 10);
-  this.element = el;
+  this.el = el;
 }
 
 Notify.prototype.show = function() {
-  if (document.getElementById(this.element.id)) return;
+  if (document.getElementById(this.el.id)) return;
 
   var container = query('.notify-container');
   if (!container) {
@@ -24,11 +24,11 @@ Notify.prototype.show = function() {
     container.className = 'notify-container';
     document.body.appendChild(container);
   }
-  container.appendChild(this.element);
+  container.appendChild(this.el);
 };
 
 Notify.prototype.clear = function() {
-  var el = this.element;
+  var el = this.el;
   el.parentNode.removeChild(el);
 };
 
