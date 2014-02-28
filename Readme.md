@@ -1,5 +1,5 @@
 
-# notify
+# notice
 
   A notification message component.
 
@@ -7,7 +7,7 @@
 
   Install with [component(1)](http://component.io):
 
-    $ component install yuehu/notify
+    $ component install yuehu/notice
 
 ## API
 

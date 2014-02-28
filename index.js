@@ -1,21 +1,21 @@
 /**
- * Notify
+ * Notice
  *
  * Copyright (c) 2014 by Hsiaoming Yang.
  */
 
-// Because Notification is a built-in function, we use Notify instead.
+// Because Notification is a built-in function, we use Notice instead.
 
 var query = require('query');
 
-function Notify(options) {
+function Notice(options) {
   // options contains: title, message, iconUrl, url
   var el = createElement(options);
   el.id = 'notify-' + parseInt(Math.random() * 1000000, 10);
   this.el = el;
 }
 
-Notify.prototype.show = function() {
+Notice.prototype.show = function() {
   if (document.getElementById(this.el.id)) return;
 
   var container = query('.notify-container');
@@ -27,7 +27,7 @@ Notify.prototype.show = function() {
   container.appendChild(this.el);
 };
 
-Notify.prototype.clear = function() {
+Notice.prototype.clear = function() {
   var el = this.el;
   el.parentNode.removeChild(el);
 };
@@ -67,12 +67,12 @@ function createElement(options) {
 
 function notify(options, cb) {
   var time = options.duration || 2000;
-  var item = new Notify(options);
+  var item = new Notice(options);
   item.show();
   setTimeout(function() {
     item.clear();
     cb && cb();
   }, time);
 }
-notify.Notify = Notify;
+notify.Notice = Notice;
 module.exports = notify;
