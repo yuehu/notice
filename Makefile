@@ -1,5 +1,5 @@
 
-build: components index.js notify.css
+build: components index.js notice.css
 	@component build --dev
 
 components: component.json
@@ -9,6 +9,6 @@ clean:
 	rm -fr build components template.js
 
 watch:
-	rewatch index.js notify.css -c "make build"
+	rewatch index.js *.css -c "make build"
 
 .PHONY: clean

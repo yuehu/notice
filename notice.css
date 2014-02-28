@@ -1,43 +1,38 @@
-.notify-container {
+.notice-container {
   position: fixed;
-  top: 20px;
-  right: 20px;
-  font-family: "Arial", "Hiragino Sans GB", "WenQuanYi Micro Hei", sans-serif;
+  top: 0;
+  left: 0;
+  width: 100%;
   z-index: 999999;
 }
-.notify-container .notify-icon {
-  float: left;
-  width: 36px;
-  height: 36px;
-  margin-right: 10px;
-  border-radius: 3px;
+.notice-container .notice-item {
+  position: relative;
+  font: 500 16px/1.8 "Georgia","Xin Gothic","Hiragino Sans GB","WenQuanYi Micro Hei",sans-serif;
+  background: rgba(255,255,255,0.9);
+  padding: 10px 20px;
+  box-sizing: border-box;
+  border-bottom: 1px solid #dadada;
+  text-align: center;
+  -webkit-transition: opacity .2s ease-in-out;
+  -moz-transition: opacity .2s ease-in-out;
+  -ms-transition: opacity .2s ease-in-out;
+  -o-transition: opacity .2s ease-in-out;
+  transition: opacity .2s ease-in-out;
 }
-.notify-container .notify-item {
-  display: block;
-  width: 300px;
-  background: #f9f9f9 -webkit-linear-gradient(white, rgba(255,255,255,0.1));
-  background: #f9f9f9 -moz-linear-gradient(white, rgba(255,255,255,0.1));
-  background: #f9f9f9 -ms-linear-gradient(white, rgba(255,255,255,0.1));
-  background: #f9f9f9 -o-linear-gradient(white, rgba(255,255,255,0.1));
-  background: #f9f9f9 linear-gradient(white, rgba(255,255,255,0.1));
-  margin-bottom: 12px;
-  padding: 10px;
-  border: 1px solid;
-  border-color: rgba(0,0,0,0.1) rgba(0,0,0,0.2) rgba(0,0,0,0.2) rgba(0,0,0,0.1);
-  border-radius: 3px;
-  box-shadow: 1px 1px 6px rgba(0,0,0,0.2);
+.notice-container .notice-content {
+  color: #565656;
   text-decoration: none;
-  color: #333;
+  margin: 0 auto;
+  max-width: 650px;
 }
-.notify-container .notify-content {
-  overflow: hidden;
+.notice-container .notice-close {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  cursor: pointer;
+  font: 400 normal 22px/1.3 "Arial", sans-serif;
+  color: rgba(231, 76, 60, 0.6);
 }
-.notify-container .notify-title {
-  font-weight: 600;
-  line-height: 1.4;
-}
-.notify-container .notify-message {
-  font-size: 0.9em;
-  line-height: 1.2;
-  color: #555;
+.notice-container .notice-dismiss {
+  opacity: 0;
 }

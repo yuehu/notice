@@ -7,63 +7,72 @@
 // Because Notification is a built-in function, we use Notice instead.
 
 var query = require('query');
+var events = require('event');
+
+var _COUNT = 0;
 
 function Notice(options) {
-  // options contains: title, message, iconUrl, url
   var el = createElement(options);
-  el.id = 'notify-' + parseInt(Math.random() * 1000000, 10);
+  el.id = 'notice-' + (_COUNT++);
   this.el = el;
 }
 
 Notice.prototype.show = function() {
   if (document.getElementById(this.el.id)) return;
 
-  var container = query('.notify-container');
+  var container = query('.notice-container');
   if (!container) {
     container = document.createElement('div');
-    container.className = 'notify-container';
+    container.className = 'notice-container';
     document.body.appendChild(container);
   }
   container.appendChild(this.el);
 };
 
 Notice.prototype.clear = function() {
-  var el = this.el;
-  el.parentNode.removeChild(el);
+  dismiss(this.el);
 };
 
 function createElement(options) {
-  // div.notify-item
-  //   img.notify-icon
-  //   div.notify-content
-  //     div.notify-title
-  //     div.notify-message
-  var el;
-  if (options.url) {
-    el = document.createElement('a');
-    el.href = options.url;
-    el.target = '_blank';
-  } else {
-    el = document.createElement('div');
-  }
-  el.className = 'notify-item';
+  // div.notice-item
+  //   span.notice-close
+  //   div.notice-content
+  var container = document.createElement('div');
+  container.className = 'notice-item';
   if (options.type) {
-    el.className += ' ' + options.type;
+    container.className += ' ' + options.type;
   }
-  var html = '';
-  if (options.iconUrl) {
-    html += '<img class="notify-icon" src="' + options.iconUrl + '">';
+
+  var content;
+  if (options.url) {
+    content = document.createElement('a');
+    content.href = options.url;
+    content.target = '_blank';
+  } else {
+    content = document.createElement('div');
   }
-  html += '<div class="notify-content">';
-  if (options.title) {
-    html += '<div class="notify-title">' + options.title + '</div>';
-  }
-  html += '<div class="notify-message">' + options.message + '</div>';
-  html += '</div>';
-  el.innerHTML = html;
-  return el;
+  content.className = 'notice-content';
+  content.innerHTML = options.message;
+
+  var close = document.createElement('span');
+  close.className = 'notice-close';
+  close.innerHTML = '×';
+
+  container.appendChild(close);
+  container.appendChild(content);
+
+  events.bind(close, 'click', function(e) {
+    dismiss(container);
+  });
+  return container;
 }
 
+function dismiss(el) {
+  el.className += ' notice-dismiss';
+  setTimeout(function() {
+    el.parentNode.removeChild(el);
+  }, 200);
+}
 
 function notify(options, cb) {
   var time = options.duration || 2000;
