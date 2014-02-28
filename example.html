@@ -2,17 +2,17 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Notify</title>
+  <title>Notice</title>
   <script src="build/build.js"></script>
   <link rel="stylesheet" href="build/build.css">
 </head>
 <body>
   <script>
-    var notify = require('notify');
-    new notify.Notify({title: 'Hello', message: 'This is a message for the notification', url: "http://lepture.com/"}).show();
-    new notify.Notify({title: 'Hello', message: 'This is is isi si isi si is i is isi si si siThis is a message for the notification', iconUrl: 'https://pbs.twimg.com/profile_images/378800000735383044/c21bcf4c9a605d3f6e0b2ee2052dd7c0.jpeg'}).show();
-    new notify.Notify({title: 'Hello', message: 'This is a message for the notification'}).show();
-    new notify.Notify({message: 'This is a message for the notification'}).show();
+    var notice = require('notice');
+    new notice.Notice({message: 'This is a message for the notification', url: "http://lepture.com/"}).show();
+    new notice.Notice({message: 'This is is isi si isi si is i is isi si si siThis is a message for the notification'}).show();
+    new notice.Notice({message: 'This is a message for the notification'}).show();
+    new notice.Notice({message: 'This is a message for the notification'}).show();
   </script>
 </body>
 </html>
