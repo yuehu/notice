@@ -75,7 +75,7 @@ function dismiss(el) {
 }
 
 function notify(options, cb) {
-  var time = options.duration || 2000;
+  var time = options.duration || 4000;
   var item = new Notice(options);
   item.show();
   setTimeout(function() {
