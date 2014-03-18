@@ -1,10 +1,10 @@
 /**
  * Notice
  *
+ * A notice message at the top of a webpage.
+ *
  * Copyright (c) 2014 by Hsiaoming Yang.
  */
-
-// Because Notification is a built-in function, we use Notice instead.
 
 var query = require('query');
 var events = require('event');
@@ -70,7 +70,9 @@ function createElement(options) {
 function dismiss(el) {
   el.className += ' notice-dismiss';
   setTimeout(function() {
-    el.parentNode.removeChild(el);
+    if (el && el.parentNode) {
+      el.parentNode.removeChild(el);
+    }
   }, 200);
 }
 
