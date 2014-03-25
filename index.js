@@ -77,6 +77,10 @@ function dismiss(el) {
 }
 
 function notify(options, cb) {
+  if (!options) return;
+  if (!options.message) {
+    options = {message: options};
+  }
   var time = options.duration || 4000;
   var item = new Notice(options);
   item.show();
