@@ -16,6 +16,13 @@ Install with [component(1)](http://component.io):
 var notice = require('notice');
 ```
 
+### Options
+
+1. **message**: `notice({message: 'Show a message'})`
+2. **type**: warn or error.
+3. **url**: A message with this url.
+4. **duration**: dismiss after the duration, default is 4000ms.
+
 ### notice(options, cb)
 
 Show & auto dismiss an message.
@@ -24,26 +31,21 @@ Show & auto dismiss an message.
 notice('Show a message');
 ```
 
-### options
+### Notice(options)
 
-1. **message**: `notice({message: 'Show a message'})`
-2. **type**: warn or error.
-3. **url**: A message with this url.
-4. **duration**: dismiss after the duration, default is 4000ms.
+Create a notification.
 
----
-
-```js
-new notice.Notice(options)
-```
-
-### .show()
+### Notice#show()
 
 Show message.
 
-### .clear()
+### Notice#clear()
 
 Clear message.
+
+### Notice#hide()
+
+Alias for `Notice#clear()`.
 
 ## License
 
