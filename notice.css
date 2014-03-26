@@ -17,11 +17,11 @@
   box-sizing: border-box;
   border-bottom: 1px solid #dadada;
   text-align: center;
-  -webkit-transition: opacity .2s ease-in-out;
-  -moz-transition: opacity .2s ease-in-out;
-  -ms-transition: opacity .2s ease-in-out;
-  -o-transition: opacity .2s ease-in-out;
-  transition: opacity .2s ease-in-out;
+  -webkit-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
+  -webkit-transform-origin: top;
+  -ms-transform-origin: top;
+  transform-origin: top;
 }
 .notice-container .notice-content {
   color: #565656;
@@ -38,5 +38,8 @@
   color: rgba(231, 76, 60, 0.6);
 }
 .notice-container .notice-dismiss {
+  -webkit-transform: rotateX(60deg);
+  -ms-transform: rotateX(60deg);
+  transform: rotateX(60deg);
   opacity: 0;
 }
