@@ -8,14 +8,16 @@
 .notice-container .notice-item {
   position: relative;
   font: 500 16px/1.8 "Georgia","Xin Gothic","Hiragino Sans GB","WenQuanYi Micro Hei",sans-serif;
+  background: #fefefe;
   background: rgba(255,255,255,0.9);
+  color: #565656;
   padding: 10px 20px;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   -ms-box-sizing: border-box;
   -o-box-sizing: border-box;
   box-sizing: border-box;
-  border-bottom: 1px solid #dadada;
+  border-bottom: 1px solid #efefef;
   text-align: center;
   -webkit-transition: all .2s ease-in-out;
   transition: all .2s ease-in-out;
@@ -23,8 +25,24 @@
   -ms-transform-origin: top;
   transform-origin: top;
 }
+/* colors from bootstrap */
+.notice-container .warning,
+.notice-container .warn {
+  background: #fcf8e3;
+  background: rgba(252, 248, 227, 0.9);
+  border-color: #fbeed5;
+  color: #c09853;
+}
+.notice-container .danger,
+.notice-container .error {
+  background: #f2dede;
+  background: rgba(242, 222, 222, 0.9);
+  border-color: #ebccd1;
+  color: #a94442;
+}
+
 .notice-container .notice-content {
-  color: #565656;
+  color: inherit;
   text-decoration: none;
   margin: 0 auto;
   max-width: 650px;
