@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Notice</title>
+  <meta name="description" content="Show a notification message or tip at the very top of the window.">
+  <script src="build/build.js"></script>
+  <link rel="stylesheet" href="build/build.css">
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      max-width: 650px;
+      padding: 60px 10px;
+      margin: 0 auto;
+      font-family: "Georgia", serif;
+    }
+    .container p, .container a {
+      color: #666;
+    }
+    .buttons {
+      margin: 100px 0 80px;
+    }
+    .buttons button {
+      height: 32px;
+      line-height: 32px;
+      padding: 0 20px;
+      text-align: center;
+      border: none;
+      border-radius: 20px;
+      background: #111;
+      color: white;
+      cursor: pointer;
+      font-size: 16px;
+      font-family: "Helvetica Neue", sans-serif;
+      font-weight: 300;
+      margin-right: 10px;
+      margin-bottom: 20px;
+      outline: none;
+    }
+    .buttons button:hover {
+      opacity: 0.8;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Notice</h1>
+    <p>Show a simple message.</p>
+    <div class="buttons">
+      <button id="show">Show Message</button>
+      <button id="hide">Show &amp; Hide</button>
+      <button id="type">Typed Message</button>
+      <button id="link">Link Message</button>
+    </div>
+    <p><a href="https://github.com/yuehu/notice">Fork me on GitHub</a></p>
+    <p>A component by <a href="http://lepture.com/">Hsiaoming Yang</a></p>
+  </div>
+  <script>
+    function $(id) { return document.getElementById(id) };
+    var notice = require('notice');
+    $('show').onclick = function() {
+      new notice.Notice({message: 'Show a simple message'}).show();
+    };
+    $('hide').onclick = function() {
+      notice('This message will auto hide');
+    };
+    $('type').onclick = function() {
+      notice({message: 'This message will auto hide', type: 'warn'});
+    };
+    $('link').onclick = function() {
+      new notice.Notice({
+        message: 'Click on this message',
+        url: 'http://lepture.com/'
+      }).show();
+    };
+  </script>
+</body>
+</html>
