@@ -9,11 +9,11 @@
 var query = require('query');
 var events = require('event');
 
-var _COUNT = 0;
+var COUNT = 0;
 
 function Notice(options) {
   var el = createElement(options);
-  el.id = 'notice-' + (_COUNT++);
+  el.id = 'notice-' + (COUNT++);
   this.el = el;
 }
 
@@ -29,7 +29,7 @@ Notice.prototype.show = function() {
   container.appendChild(this.el);
 };
 
-Notice.prototype.clear = function() {
+Notice.prototype.hide = Notice.prototype.clear = function() {
   dismiss(this.el);
 };
 
