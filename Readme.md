@@ -22,6 +22,7 @@ var notice = require('notice');
 2. **type**: warn or error.
 3. **url**: A message with this url.
 4. **duration**: dismiss after the duration, default is 4000ms.
+5. **closeEvent**: clear the message on the given event. Default is click.
 
 ### notice(options, cb)
 

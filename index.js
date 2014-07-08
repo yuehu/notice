@@ -61,7 +61,8 @@ function createElement(options) {
   container.appendChild(close);
   container.appendChild(content);
 
-  events.bind(close, 'click', function(e) {
+  var eventType = options.closeEvent || 'click';
+  events.bind(close, eventType, function(e) {
     dismiss(container);
   });
   return container;
